@@ -12,14 +12,14 @@ const Index = () => {
 
   return (
     <Box maxW="800px" margin="auto" padding="4" bgColor={bgColor}>
-      <Heading as="h1" size="xl" marginBottom="8">Hacker News Clone</Heading>
+      <Heading as="h1" size="xl" marginBottom="8" color="white">Hacker News Clone</Heading>
       <List spacing={3}>
         {newsItems.map(item => (
-          <ListItem key={item.id} padding="4" boxShadow="md" borderRadius="md">
+          <ListItem key={item.id} padding="4" boxShadow="md" borderRadius="md" bgColor={bgColor}>
             <Link href={item.url} isExternal>
               {item.title} <FaExternalLinkAlt />
             </Link>
-            <Text fontSize="sm">Points: {item.points} by {item.author} | {item.comments} comments</Text>
+            <Text fontSize="sm" color="white">Points: {item.points} by {item.author} | {item.comments} comments</Text>
           </ListItem>
         ))}
       </List>
