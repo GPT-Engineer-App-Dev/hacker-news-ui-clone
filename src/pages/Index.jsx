@@ -1,4 +1,5 @@
 import { Box, Heading, List, ListItem, Link, Text, useColorModeValue, Button } from "@chakra-ui/react";
+import { useNavigate } from 'react-router-dom';
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Index = () => {
@@ -9,11 +10,12 @@ const Index = () => {
   ];
 
   const bgColor = useColorModeValue("brand.700", "brand.900");
+  const navigate = useNavigate();
 
   return (
     <Box maxW="800px" margin="auto" padding="4" bgColor={bgColor}>
       <Heading as="h1" size="xl" marginBottom="8" color="white">Hacker News Clone</Heading>
-      <Button colorScheme="orange" size="lg" marginBottom="8" onClick={() => window.location.href='/submit'}>
+      <Button colorScheme="orange" size="lg" marginBottom="8" onClick={() => navigate('/submit')}>
         Submit Post
       </Button>
       <List spacing={3}>
