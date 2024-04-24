@@ -1,4 +1,4 @@
-import { Box, Heading, List, ListItem, Link, Text } from "@chakra-ui/react";
+import { Box, Heading, List, ListItem, Link, Text, useColorModeValue } from "@chakra-ui/react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Index = () => {
@@ -8,8 +8,10 @@ const Index = () => {
     { id: 3, title: "Understanding the basics of Blockchain", url: "https://blockchain.com", points: 200, author: "alice", comments: 40 }
   ];
 
+  const bgColor = useColorModeValue("brand.700", "brand.900");
+
   return (
-    <Box maxW="800px" margin="auto" padding="4">
+    <Box maxW="800px" margin="auto" padding="4" bgColor={bgColor}>
       <Heading as="h1" size="xl" marginBottom="8">Hacker News Clone</Heading>
       <List spacing={3}>
         {newsItems.map(item => (
